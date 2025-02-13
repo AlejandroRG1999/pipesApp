@@ -1,0 +1,78 @@
+<h2>Pipes no tan comunes</h2>
+<hr>
+<p>
+  Pipes incluidos en Angular - Usualmente en el Common Module
+</p>
+
+<div class="row">
+  <div class="container col-6 mb-3">
+    <h3> i18nSelect Pipe </h3>
+
+    <p>
+      Saludos {{ name }}, es un placer
+      {{ gender | i18nSelect:invitationMap }}
+      a nuestro evento.
+    </p>
+
+    <button (click)="changeClient()"
+    class="btn btn-outline-primary"> Cambiar persona </button>
+
+  </div>
+  <div class="container col-6 mb-3">
+    <h3> i18nPlural Pipe </h3>
+
+    <p>
+      Actualmente {{ clients.length| i18nPlural:clientsMap | lowercase }}
+    </p>
+
+    <button (click)="deleteClient()"
+    class="btn btn-outline-primary"> Borrar cliente </button>
+
+  </div>
+
+  <div class="container col-6  mb-3">
+    <h3> Slice Pipe </h3>
+
+    <b> Original </b>
+    <pre> {{ clients }} </pre>
+
+    <b>slice:3:5</b>
+    <pre> {{ clients | slice:3:5 }} </pre>
+    <b>slice:0:1</b>
+    <pre> {{ clients | slice:0:1 }} </pre>
+    <b>slice:1:4</b>
+    <pre> {{ clients | slice:1:4 }} </pre>
+    <b>slice:2:2</b>
+    <pre> {{ clients | slice:2:2 }} </pre>
+
+  </div>
+  <div class="container col-6  mb-3">
+    <h3> Json Pipe </h3>
+
+    <pre>
+      {{ person | json }}
+    </pre>
+
+  </div>
+  <div class="container col-6  mb-3">
+    <h3> KeyValue Pipe </h3>
+
+    <ul>
+      <li *ngFor="let item of person | keyvalue">
+        <b> {{ item.key | titlecase }}: </b> {{item.value}}
+      </li>
+    </ul>
+
+  </div>
+  <div class="container col-6  mb-3">
+    <h3> Async Pipe </h3>
+
+
+    <pre *ngIf="!(myObservableTimer | async)"> Resolviendo observable </pre>
+    <pre> {{ myObservableTimer | async }} </pre>
+
+    <pre *ngIf="!(promiseValue | async)"> Resolviendo promesa </pre>
+    <pre> {{ promiseValue | async }} </pre>
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<button mat-button [matMenuTriggerFor]="pipes"> Menu </button>
+
+<mat-menu #pipes="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="pipesAngular">Pipes de Angular</button>
+  <button mat-menu-item [matMenuTriggerFor]="pipesPersonalizados">Invertebrates</button>
+</mat-menu>
+
+<mat-menu #pipesAngular="matMenu">
+  <button mat-menu-item> <span routerLink=""> Textos y Flechas </span></button>
+  <button mat-menu-item routerLink="numbers"> Números </button>
+  <button mat-menu-item routerLink="uncommon"> No comunes </button>
+</mat-menu>
+
+<mat-menu #pipesPersonalizados="matMenu">
+  <button mat-menu-item routerLink="home" > Otro elemento </button>
+</mat-menu>

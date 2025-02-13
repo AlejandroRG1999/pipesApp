@@ -1,0 +1,26 @@
+<h2>Pipes Númericos</h2>
+<hr>
+<p>
+  Pipes incluidos en Angular - Usualmente en el Common Module
+</p>
+
+<div class="row">
+  <div class="container col-4">
+    <h3>Ventas netas</h3>
+    <p>
+      {{ totalSells | number:'1.2-2' }}
+    </p>
+  </div>
+  <div class="container col-4">
+    <h3>Ventas brutas</h3>
+    <p>
+      {{ (totalSells + 1235) | currency:'EUR':'€':'1.6-6' }}
+    </p>
+  </div>
+  <div class="container col-4">
+    <h3> Ganancia porcentual </h3>
+    <p>
+      {{ percent | percent:'1.2-2' }}
+    </p>
+  </div>
+</div>
