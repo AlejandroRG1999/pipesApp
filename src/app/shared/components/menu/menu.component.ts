@@ -10,8 +10,4 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class MenuComponent {
 
-  public console(): void {
-    console.log('asd');
-  }
-
 }

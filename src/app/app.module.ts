@@ -12,6 +12,7 @@ import localeEsEs from "@angular/common/locales/es";
 import localeFrCa from "@angular/common/locales/fr-CA";
 
 import { registerLocaleData } from '@angular/common'
+import { AngularMaterialModule } from './angularmaterial/angularmaterial.module';
 registerLocaleData( localeEsEs );
 registerLocaleData( localeFrCa );
 

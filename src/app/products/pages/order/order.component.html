@@ -1,0 +1,41 @@
+<h2>Pipes Personalizados</h2>
+<hr>
+<p>
+  Pipes personalizados - creados por {{ 'nosotros' | toggleCase: isUpperCase }}
+
+</p>
+
+<div class="d-flex justify-content-center">
+  <button mat-stroked-button (click)="toggleUpperCase()"> ToggleCase </button>
+  <button style="margin-left: 150px;" mat-stroked-button (click)="changeOrder('name')"> Por nombre </button>
+  <button style="margin-left: 50px;" mat-stroked-button (click)="changeOrder('canFly')"> Por volar </button>
+  <button style="margin-left: 50px;" mat-stroked-button (click)="changeOrder('color')"> Por color </button>
+</div>
+
+<div class="grid">
+  <div class="col-12 mt-2">
+
+    <table mat-table [dataSource]=" hero | sortBy:orderBy " class="mat-elevation-z8">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="canFly">
+        <th mat-header-cell *matHeaderCellDef> Vuela </th>
+        <td mat-cell *matCellDef="let hero"> {{ hero.canFly | canFly | titlecase }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="color">
+        <th mat-header-cell *matHeaderCellDef> Color </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.color}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+  </div>
+</div>

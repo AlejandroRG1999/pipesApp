@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatMenuModule } from "@angular/material/menu";
-import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from '@angular/router';
 
 import { MenuComponent } from './components/menu/menu.component';
-import { RouterModule } from '@angular/router';
+import { AngularMaterialModule } from '../angularmaterial/angularmaterial.module';
 
 
 
@@ -14,8 +13,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    MatMenuModule,
-    MatIconModule,
+    AngularMaterialModule,
     RouterModule,
   ],
   exports:[
